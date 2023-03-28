@@ -21,4 +21,21 @@ public class BulletScript : MonoBehaviour
     //Lifetime
     public int maxCollisions;
     public float maxLifetime;
+    public bool explodeOnTouch = true;
+    private int collisions;
+    private PhysicMaterial physics_mat;
+
+    private void Setup()
+    {
+        //create new physics material
+        physics_mat = new PhysicMaterial();
+        physics_mat.bounciness = bounciness;
+        physics_mat.frictionCombine = PhysicMaterialCombine.Minimum;
+        physics_mat.bounceCombine = PhysicMaterialCombine.Maximum;
+        //assign material
+        GetComponent<SphereCollider>().material = physics_mat;
+        
+        //set gravity
+        rb.useGravity = useGravity;
+    }
 }
