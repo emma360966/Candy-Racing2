@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +18,7 @@ public class BulletScript : MonoBehaviour
     //Damage
     public int explosionDamage;
     public float explosionRange;
+    public float explosionForce; 
     
     //Lifetime
     public int maxCollisions;
@@ -24,6 +26,61 @@ public class BulletScript : MonoBehaviour
     public bool explodeOnTouch = true;
     private int collisions;
     private PhysicMaterial physics_mat;
+
+    private void Start()
+    {
+        Setup();
+    }
+
+    private void Update()
+    {
+        //When to explode
+        if (collisions > maxCollisions)
+        {
+            Explode();
+        }
+
+        //count down life
+        maxLifetime -= Time.deltaTime;
+        if (maxLifetime <= 0)
+        {
+            Explode();
+        }
+    }
+
+    private void Explode()
+    {
+        //instantiate explosion
+        if (explosion != null)
+        {
+            Instantiate(explosion, transform.position, Quaternion.identity);
+        }
+        //Check for enemies
+        Collider[] enemies = Physics.OverlapSphere(transform.position, explosionRange, whatIsTarget);
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            enemies[i].GetComponent<obstacleTarget>().TakeDamage(explosionDamage);
+            //add explosion force
+            if (enemies[i].GetComponent<Rigidbody>())
+            {
+                enemies[i].GetComponent<Rigidbody>().AddExplosionForce(explosionForce, transform.position,explosionRange);
+            }
+        }
+        //Add a delay
+        Invoke("Delay",0.05f);
+    }
+
+    private void Delay()
+    {
+        Destroy(gameObject);
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        collisions++;
+        
+        if (collision.collider.CompareTag("obstacle") && explodeOnTouch) Explode();
+        
+    }
 
     private void Setup()
     {
@@ -37,5 +94,11 @@ public class BulletScript : MonoBehaviour
         
         //set gravity
         rb.useGravity = useGravity;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, explosionRange);
     }
 }
