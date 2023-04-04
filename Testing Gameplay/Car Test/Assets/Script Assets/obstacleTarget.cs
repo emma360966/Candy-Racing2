@@ -6,20 +6,28 @@ using UnityEngine;
 public class obstacleTarget : MonoBehaviour
 {
        public float health;
-       private bool isDead;
+       private bool isDestroyed;
 
        public void TakeDamage(int damage)
        {
               health -= damage;
               if (health <= 0)
               {
-                     isDead = true;
+                     isDestroyed = true;
               }
        }
 
        public void Update()
        {
-              if (isDead)
+              if (isDestroyed)
+              {
+                     Destroy(gameObject);
+              }
+       }
+
+       private void OnCollisionEnter(Collision collision)
+       {
+              if (collision.collider.CompareTag("Player"))
               {
                      Destroy(gameObject);
               }
