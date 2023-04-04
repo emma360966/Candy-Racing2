@@ -86,14 +86,14 @@ UpdateWheel(rearLeft, rearLeftTransform);
  private void RotationCorrectionRight(Transform position)
  {
   Quaternion rotate = transform.rotation;
-  rotate = rotate * Quaternion.Euler(0,-90,0);
+  rotate = rotate * Quaternion.Euler(0,360,0);
   transform.rotation = rotate;
  }
  // for driver side wheels
  private void RotationCorrectionLeft(Transform position)
  {
   Quaternion rotate = transform.rotation;
-  rotate = rotate * Quaternion.Euler(0, 90, 0);
+  rotate = rotate * Quaternion.Euler(0, 360, 0);
   transform.rotation = rotate;
  }
 }
