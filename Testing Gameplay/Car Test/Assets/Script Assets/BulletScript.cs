@@ -46,6 +46,8 @@ public class BulletScript : MonoBehaviour
         {
             Explode();
         }
+
+
     }
 
     private void Explode()

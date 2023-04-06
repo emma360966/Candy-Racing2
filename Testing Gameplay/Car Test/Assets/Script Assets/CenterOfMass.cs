@@ -2,7 +2,9 @@
 // the inspector.
 using UnityEngine;
 using System.Collections;
-
+//This script was made for when the car needed one, back when I was testing another model for gameplay.
+//Legacy code
+//Feel free to delete, shouldn't change anything
 public class CenterOfMass : MonoBehaviour
 {
     public Vector3 com;
