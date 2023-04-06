@@ -10,7 +10,10 @@ public class obstacleTarget : MonoBehaviour
 
        public void TakeDamage(int damage)
        {
-              health -= damage;
+              //more efficient
+              //health -= damage;
+              //more readable
+              health = health - damage;
               if (health <= 0)
               {
                      isDestroyed = true;

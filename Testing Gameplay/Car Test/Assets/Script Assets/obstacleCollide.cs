@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class obstacleCollide : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class obstacleCollide : MonoBehaviour
         if (collision.collider.CompareTag("obstacle"))
         {
             damageTaken++;
+            print(damageTaken);
         }    
         
     }
@@ -30,6 +32,7 @@ public class obstacleCollide : MonoBehaviour
         if (damageTaken == playerMaxHits)
         {
             //Insert your code here that will bring it to the gameover screen.
+            SceneManager.LoadScene("GameOverScreen");
             print("dead");
         }
     }
