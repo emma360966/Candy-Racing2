@@ -66,8 +66,8 @@ public class WheelControllerTest : MonoBehaviour
  else if (frontWheelDrive)
  {
   //Apply acceleration to front wheels
-  frontRight.motorTorque = currentAcceleration;
-  frontLeft.motorTorque = currentAcceleration;
+  frontRight.motorTorque = currentAcceleration * 9000;
+  frontLeft.motorTorque = currentAcceleration * 9000; 
   //Apply brake force to front wheels 
   frontRight.brakeTorque = currentBreakForce;
   frontLeft.brakeTorque = currentBreakForce;
@@ -84,10 +84,12 @@ public class WheelControllerTest : MonoBehaviour
  rearLeft.brakeTorque = currentBreakForce;
 **/
 
-//Steering time
+//Steering 
   currentTurnAngle = maxTurnAngle * Input.GetAxis("Horizontal");
-  frontLeft.steerAngle = currentTurnAngle;
-  frontRight.steerAngle = currentTurnAngle;
+ 
+   frontLeft.steerAngle = currentTurnAngle;
+   frontRight.steerAngle = currentTurnAngle;
+
 
 //Update meshes :)
 UpdateWheel(frontLeft,frontLeftTransform);

@@ -20,7 +20,8 @@ public class getSpeed : MonoBehaviour
               previousPosition = transform.position;
          }
          
-         speed = Mathf.RoundToInt(Vector3.Distance(transform.position, previousPosition) / Time.fixedDeltaTime);
+         //speed = Mathf.RoundToInt(Vector3.Distance(transform.position, previousPosition) / Time.fixedDeltaTime);
+         speed = Mathf.RoundToInt(speed);
          if (speedGUI != null)
         {
             speedGUI.SetText(speed.ToString());
