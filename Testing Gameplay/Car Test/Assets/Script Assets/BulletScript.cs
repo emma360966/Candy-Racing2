@@ -27,8 +27,12 @@ public class BulletScript : MonoBehaviour
     private int collisions;
     private PhysicMaterial physics_mat;
 
+    //kills
+   // [SerializeField] pointGet pointGetter;
+    
     private void Start()
     {
+        //pointGetter = GameObject.Find("pointManager").GetComponent<pointGet>();
         Setup();
     }
 
@@ -72,6 +76,12 @@ public class BulletScript : MonoBehaviour
         Invoke("Delay",0.05f);
     }
 
+   /** private void killIncrease()
+    {
+        pointGetter.kills++;
+    }
+    **/
+    
     private void Delay()
     {
         Destroy(gameObject);
@@ -79,8 +89,14 @@ public class BulletScript : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         collisions++;
-        
-        if (collision.collider.CompareTag("obstacle") && explodeOnTouch) Explode();
+        if (collision.collider.CompareTag("obstacle"))
+        {
+         //   killIncrease();
+        }
+        if (collision.collider.CompareTag("obstacle") && explodeOnTouch)
+        {
+            Explode();
+        }
         
     }
 

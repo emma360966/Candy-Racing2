@@ -7,6 +7,13 @@ public class obstacleTarget : MonoBehaviour
 {
        public float health;
        private bool isDestroyed;
+       public GameObject myPlayer;
+       [SerializeField] pointGet pointGetter;
+
+       private void Start()
+       {
+              pointGetter = GameObject.Find("pointManager").GetComponent<pointGet>();
+       }
 
        public void TakeDamage(int damage)
        {
@@ -20,10 +27,11 @@ public class obstacleTarget : MonoBehaviour
               }
        }
 
-       public void Update()
+        void Update()
        {
               if (isDestroyed)
               {
+                     pointGetter.kills++;
                      Destroy(gameObject);
               }
        }
@@ -32,6 +40,7 @@ public class obstacleTarget : MonoBehaviour
        {
               if (collision.collider.CompareTag("Player"))
               {
+                     pointGetter.detractions++;
                      Destroy(gameObject);
               }
        }
