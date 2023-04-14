@@ -32,7 +32,7 @@ public class pointGet : MonoBehaviour
             print("You have " + kills + " kills and " + detractions + " detractions. your points are " + points);
             
          }
-    }
+    } 
 
     public void pointUpdate()
     {
