@@ -24,7 +24,7 @@ public class getSpeed : MonoBehaviour
          speed = Mathf.RoundToInt(speed);
          if (speedGUI != null)
         {
-            speedGUI.SetText(speed.ToString());
+            speedGUI.SetText(speed.ToString() + " KPH");
         }
     }
 

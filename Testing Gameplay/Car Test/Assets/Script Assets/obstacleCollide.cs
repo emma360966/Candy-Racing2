@@ -11,6 +11,7 @@ public class obstacleCollide : MonoBehaviour
     public float playerMaxHits;
     private int damageTaken;
     public TextMeshProUGUI healthGUI;
+    private pointGet pointGet;
     private void OnCollisionEnter(Collision collision)
     {
         
@@ -31,7 +32,6 @@ public class obstacleCollide : MonoBehaviour
         }
         if (damageTaken == playerMaxHits)
         {
-            //Insert your code here that will bring it to the gameover screen.
             SceneManager.LoadScene("GameOverScreen");
             print("dead");
         }
