@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
+    public GameManager gameManager;
+
     private float Speed = 10f;
 
     void Update()
@@ -29,13 +31,15 @@ public class Movement : MonoBehaviour
     {
     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
 }
 
 private void OnCollisionEnter(Collision collision)
 {
-    if (collision.transform.CompareTag("END"))
+    if (collision.transform.CompareTag("box"))
     {
-        Debug.Log("Collided with end block");
+        Debug.Log("collided with box");
+		gameManager.GameOver();
     }
 }
 
