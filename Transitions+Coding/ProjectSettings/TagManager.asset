@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - END
+  - obstacle
+  - Obstacle
+  - Fall
+  - box
   layers:
   - Default
   - TransparentFX

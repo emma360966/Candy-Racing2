@@ -4,14 +4,22 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+   public float restartDelay = 1f;
+
+   public GameObject completeLevelUI; 
    
-    public float restartDelay = 1f;
+   public GameObject gameOverUI;
 
-    public GameObject completelevelUI;
 
-    public void CompleteLevel ()
-    {
-        completelevelUI.SetActive(true);
-    }
+
+   public void CompleteLevel ()
+   {
+		  completeLevelUI.SetActive(true);
+   }
+
+   public void GameOver ()
+   {
+		  gameOverUI.SetActive(true);
+   }
 
 }
