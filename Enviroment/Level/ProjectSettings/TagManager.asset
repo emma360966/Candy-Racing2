@@ -9,6 +9,9 @@ TagManager:
   - bullet
   - obstacle
   - pointManager
+  - box
+  - END
+  - killBox
   layers:
   - Default
   - TransparentFX
@@ -18,7 +21,7 @@ TagManager:
   - UI
   - player
   - obstacle
-  - 
+  - killBox
   - 
   - 
   - 
