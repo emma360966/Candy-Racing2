@@ -11,10 +11,22 @@ public class randomlyGenerate : MonoBehaviour
     public float itemYSpread = 0;
     public float itemZSpread = 10;
     public float amount;
+    public bool constant;
 
     void Start()
     {
-        for (int i = 0; i <= amount; i++)
+        if (constant != true)
+        {
+            for (int i = 0; i <= amount; i++)
+            {
+                spreadItem();
+            }
+        }
+    }
+
+    private void Update()
+    {
+        if (constant)
         {
             spreadItem();
         }
