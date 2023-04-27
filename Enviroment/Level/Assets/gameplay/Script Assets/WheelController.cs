@@ -18,7 +18,7 @@ public class WheelController : MonoBehaviour
  public float acceleration = 500f;
  public float breakingForce = 300f;
  public float maxTurnAngle = 15f;
- 
+ public bool inputEnabled;
 
  private float currentAcceleration = 0f;
  private float currentBreakForce = 0f;
@@ -27,8 +27,15 @@ public class WheelController : MonoBehaviour
  private void FixedUpdate()
  {
  //Get forward/reverse acceleration from the vertical axis (W and S keys)
- currentAcceleration = acceleration * Input.GetAxis("Vertical");     
-     
+ if (inputEnabled)
+ {
+  currentAcceleration = acceleration * Input.GetAxis("Vertical");
+ }
+ else
+ {
+  print("Disabled");
+ }
+
  //Get forward/reverse acceleration from the vertical axis (W and S keys)
  if(Input.GetKey(KeyCode.Space))
  

@@ -13,6 +13,9 @@ public class obstacleCollide : MonoBehaviour
     private int damageTaken;
     public TextMeshProUGUI healthGUI;
     private pointGet pointGet;
+    public GameObject gameOverUI;
+    public GameObject playerObject;
+
     private void OnCollisionEnter(Collision collision)
     {
         
@@ -38,9 +41,17 @@ public class obstacleCollide : MonoBehaviour
         }
         if (damageTaken == playerMaxHits)
         {
-            SceneManager.LoadScene("GameOverScreen");
-            print("dead");
+            playerObject.GetComponent<WheelControllerTest>().inputEnabled = false;
+            damageTaken = 0;
+            gameOverUI.SetActive(true);
+            //SceneManager.LoadScene("GameOverScreen");
         }
+    }
+
+    public void changeScreen()
+    {
+        print("Dead");
+        SceneManager.LoadScene("GameOverScreen");
     }
 
 
