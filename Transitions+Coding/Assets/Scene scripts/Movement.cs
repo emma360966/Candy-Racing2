@@ -7,10 +7,14 @@ public class Movement : MonoBehaviour
 {
     public GameManager gameManager;
 
+    public ParticleSystem particleSystem;
+
     private float Speed = 10f;
+
 
     void Update()
 {
+
     if(Input.GetKey(KeyCode.W))
     {
         transform.Translate(Vector3.forward * Speed * Time.deltaTime);
@@ -37,8 +41,9 @@ public class Movement : MonoBehaviour
 private void OnCollisionEnter(Collision collision)
 {
     if (collision.transform.CompareTag("box"))
-    {
+    { 
         Debug.Log("collided with box");
+        gameObject.GetComponent<ParticleSystem>().Play();
 		gameManager.GameOver();
     }
 }

@@ -133,12 +133,13 @@ MonoBehaviour:
     m_Bits: 8
   bounciness: 0.422
   useGravity: 1
-  explosionDamage: 10
-  explosionRange: 5
-  explosionForce: 100
+  explosionDamage: 5
+  explosionRange: 0.37
+  explosionForce: 5
   maxCollisions: 0
   maxLifetime: 5
   explodeOnTouch: 0
+  pointGetter: {fileID: 0}
 --- !u!96 &1380577445
 TrailRenderer:
   serializedVersion: 2

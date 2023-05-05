@@ -999,6 +999,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1883864030}
+  particleSystem: {fileID: 198917022394846920, guid: e1b08032bec16ba4eb1ae23cbd572664, type: 3}
 --- !u!65 &1419503315
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1069,7 +1070,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1419503313}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12, y: 3, z: 385}
+  m_LocalPosition: {x: 6.66, y: 3, z: 385}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 1665094200}
@@ -1187,6 +1188,7 @@ GameObject:
   - component: {fileID: 1748601117}
   - component: {fileID: 1748601116}
   - component: {fileID: 1748601115}
+  - component: {fileID: 1748601119}
   m_Layer: 5
   m_Name: gameOver
   m_TagString: Untagged
@@ -1275,6 +1277,27 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!95 &1748601119
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1748601114}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8e680cf217627c546b6178252c1f102a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1763492262
 GameObject:
   m_ObjectHideFlags: 0
@@ -1731,6 +1754,14 @@ PrefabInstance:
     - target: {fileID: 6425589445340768819, guid: 11d04c07b0a7e6545bcb5d0e8e5ce0e0, type: 3}
       propertyPath: m_Name
       value: box
+      objectReference: {fileID: 0}
+    - target: {fileID: 6425589445340768819, guid: 11d04c07b0a7e6545bcb5d0e8e5ce0e0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6425589445340768821, guid: 11d04c07b0a7e6545bcb5d0e8e5ce0e0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6425589445340768823, guid: 11d04c07b0a7e6545bcb5d0e8e5ce0e0, type: 3}
       propertyPath: m_RootOrder

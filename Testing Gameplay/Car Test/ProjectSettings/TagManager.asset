@@ -6,6 +6,7 @@ TagManager:
   tags:
   - obstacle
   - bullet
+  - pointManager
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - UI
   - bullet
   - player
-  - 
+  - pointManager
   - 
   - 
   - 
