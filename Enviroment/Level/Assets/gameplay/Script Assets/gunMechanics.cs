@@ -50,7 +50,7 @@ public class gunMechanics : MonoBehaviour
             {
                 ammunitionDisplay.SetText(bulletsLeft / bulletsPerTap + "/" + magazineSize / bulletsPerTap);
             }
-            else if (reloading = true)
+            else if (reloading == true)
             {
                 ammunitionDisplay.SetText("reloading...");
 
