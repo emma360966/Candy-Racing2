@@ -33,7 +33,8 @@ public class obstacleCollide : MonoBehaviour
         }    
         else if (collision.collider.CompareTag("killBox"))
         {
-            damageTaken = 100;
+            damageTaken = (int) playerMaxHits;
+            healthPoint.SetActive(false);
             print(damageTaken);
         }
         

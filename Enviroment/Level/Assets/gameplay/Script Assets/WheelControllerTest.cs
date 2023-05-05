@@ -48,15 +48,15 @@ public class WheelControllerTest : MonoBehaviour
  if (rearWheelDrive && frontWheelDrive)
  {
   //Apply acceleration to 4 wheels
-  frontRight.motorTorque = currentAcceleration;
-  frontLeft.motorTorque = currentAcceleration;
-  rearRight.motorTorque = currentAcceleration;
-  rearLeft.motorTorque = currentAcceleration;
+  frontRight.motorTorque = currentAcceleration * 5;
+  frontLeft.motorTorque = currentAcceleration * 5;
+  rearRight.motorTorque = currentAcceleration * 5;
+  rearLeft.motorTorque = currentAcceleration * 5;
 //Apply brake force to 4 wheels 
-  frontRight.brakeTorque = currentBreakForce;
-  frontLeft.brakeTorque = currentBreakForce;
-  rearRight.brakeTorque = currentBreakForce;
-  rearLeft.brakeTorque = currentBreakForce;
+  frontRight.brakeTorque = currentBreakForce * 10;
+  frontLeft.brakeTorque = currentBreakForce * 10;
+  rearRight.brakeTorque = currentBreakForce * 10;
+  rearLeft.brakeTorque = currentBreakForce * 10;
  }
  else if (rearWheelDrive)
  {
