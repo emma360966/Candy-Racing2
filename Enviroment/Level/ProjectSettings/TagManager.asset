@@ -6,6 +6,12 @@ TagManager:
   tags:
   - Lava
   - Spike obsticale
+  - bullet
+  - obstacle
+  - pointManager
+  - box
+  - END
+  - killBox
   layers:
   - Default
   - TransparentFX
@@ -13,9 +19,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - player
+  - obstacle
+  - killBox
   - 
   - 
   - 
