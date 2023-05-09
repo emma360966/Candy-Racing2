@@ -15,6 +15,7 @@ public class obstacleCollide : MonoBehaviour
     public TextMeshProUGUI healthGUI;
     private pointGet pointGet;
     public GameObject gameOverUI;
+    public GameObject winScreenUI;
     public GameObject playerObject;
     public GameObject healthPoint;
     public GameObject healthPointTwo;
@@ -37,7 +38,10 @@ public class obstacleCollide : MonoBehaviour
             healthPoint.SetActive(false);
             print(damageTaken);
         }
-        
+        else if (collision.collider.CompareTag("Victory"))
+        {
+            winScreenUI.SetActive(true);
+        }
     }
     
     public void Update()
