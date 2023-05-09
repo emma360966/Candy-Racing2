@@ -38,9 +38,15 @@ public class obstacleCollide : MonoBehaviour
             healthPoint.SetActive(false);
             print(damageTaken);
         }
-        else if (collision.collider.CompareTag("Victory"))
+        else if (winScreenUI != null)
         {
-            winScreenUI.SetActive(true);
+            if (collision.collider.CompareTag("Victory"))
+            {
+                if (winScreenUI != null)
+                {
+                    winScreenUI.SetActive(true);
+                }
+            }
         }
     }
     
@@ -114,7 +120,8 @@ public class obstacleCollide : MonoBehaviour
         {
             playerObject.GetComponent<WheelControllerTest>().inputEnabled = false;
             damageTaken = 0;
-            gameOverUI.SetActive(true);
+            changeScreen();
+            //gameOverUI.SetActive(true);
             //SceneManager.LoadScene("GameOverScreen");
         }
     }
@@ -122,7 +129,8 @@ public class obstacleCollide : MonoBehaviour
     public void changeScreen()
     {
         print("Dead");
-        SceneManager.LoadScene("GameOverScreen");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //SceneManager.LoadScene("GameOverScreen");
     }
 
 
