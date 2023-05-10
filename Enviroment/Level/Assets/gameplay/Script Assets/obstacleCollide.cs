@@ -120,19 +120,23 @@ public class obstacleCollide : MonoBehaviour
         {
             playerObject.GetComponent<WheelControllerTest>().inputEnabled = false;
             damageTaken = 0;
-            changeScreen();
+            changeScreenGameOver();
             //gameOverUI.SetActive(true);
             //SceneManager.LoadScene("GameOverScreen");
         }
     }
 
-    public void changeScreen()
+    public void changeScreenGameOver()
     {
         print("Dead");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         //SceneManager.LoadScene("GameOverScreen");
     }
 
-
+    public void changeScreenVictory()
+    {
+        print("Win!");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+    }
 
 }

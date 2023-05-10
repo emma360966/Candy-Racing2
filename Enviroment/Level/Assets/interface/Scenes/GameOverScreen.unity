@@ -376,6 +376,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7375899291880222118, guid: fb1c55ae9934e4c42b4df82e44cd2e51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Restart
+      objectReference: {fileID: 0}
+    - target: {fileID: 7375899291955400237, guid: fb1c55ae9934e4c42b4df82e44cd2e51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7375899291955400237, guid: fb1c55ae9934e4c42b4df82e44cd2e51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7375899292747721164}
+    - target: {fileID: 7375899291955400237, guid: fb1c55ae9934e4c42b4df82e44cd2e51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Quit
+      objectReference: {fileID: 0}
+    - target: {fileID: 7375899291955400237, guid: fb1c55ae9934e4c42b4df82e44cd2e51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Credits, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 7375899293127500515, guid: fb1c55ae9934e4c42b4df82e44cd2e51, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -466,3 +486,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb1c55ae9934e4c42b4df82e44cd2e51, type: 3}
+--- !u!114 &7375899292747721164 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7375899291780264272, guid: fb1c55ae9934e4c42b4df82e44cd2e51, type: 3}
+  m_PrefabInstance: {fileID: 7375899292747721163}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 233314dd68ff2a649a7c01c924cca95b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
