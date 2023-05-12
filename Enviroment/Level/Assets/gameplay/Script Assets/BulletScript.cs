@@ -9,7 +9,8 @@ public class BulletScript : MonoBehaviour
     public Rigidbody rb;
     public GameObject explosion;
     public LayerMask whatIsTarget;
-    
+
+    public AudioSource boom;
     //Stats
     [Range(0f,1f)] 
     public float bounciness;
@@ -41,6 +42,7 @@ public class BulletScript : MonoBehaviour
         //When to explode
         if (collisions > maxCollisions)
         {
+            boom.Play();
             Explode();
         }
 
@@ -60,7 +62,6 @@ public class BulletScript : MonoBehaviour
         if (explosion != null)
         {
             Instantiate(explosion, transform.position, Quaternion.identity);
-            
         }
         //Check for enemies
         Collider[] enemies = Physics.OverlapSphere(transform.position, explosionRange, whatIsTarget);
