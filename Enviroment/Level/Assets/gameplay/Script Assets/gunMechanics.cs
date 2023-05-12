@@ -32,6 +32,10 @@ public class gunMechanics : MonoBehaviour
     
 //testing :D
     public bool allowInvoke = true;
+    public AudioSource gunSounds;
+
+    public AudioSource reloadSound;
+    //public GameObject reloadSound;
 
     private void Awake()
     {
@@ -62,7 +66,7 @@ public class gunMechanics : MonoBehaviour
     {
         //Check if allowed to hold
         if (allowButtonHold) shooting = Input.GetKey(KeyCode.F);
-        else shooting = Input.GetKeyDown(KeyCode.F);
+        else shooting = Input.GetKeyDown(KeyCode.F);    
         //reloading
         if(Input.GetKeyDown(KeyCode.R) && bulletsLeft < magazineSize && !reloading) Reload();
         //reload automatically when no ammo
@@ -79,6 +83,10 @@ public class gunMechanics : MonoBehaviour
 
     private void Shoot()
     {
+        if (gunSounds != null)
+        {
+            gunSounds.Play();
+        }
         readyToShoot = false;
         //ray stuff
         Ray ray = playerCam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
@@ -138,6 +146,7 @@ currentBullet.GetComponent<Rigidbody>().AddForce(playerCam.transform.up * upward
 
     private void Reload()
     {
+        reloadSound.Play();
         reloading = true;
         Invoke("ReloadFinished", reloadTime);
     }
