@@ -60,6 +60,7 @@ public class BulletScript : MonoBehaviour
         if (explosion != null)
         {
             Instantiate(explosion, transform.position, Quaternion.identity);
+            
         }
         //Check for enemies
         Collider[] enemies = Physics.OverlapSphere(transform.position, explosionRange, whatIsTarget);

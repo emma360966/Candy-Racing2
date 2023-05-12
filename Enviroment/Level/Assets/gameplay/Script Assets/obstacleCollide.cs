@@ -15,6 +15,7 @@ public class obstacleCollide : MonoBehaviour
     public TextMeshProUGUI healthGUI;
     private pointGet pointGet;
     public GameObject gameOverUI;
+    public GameObject winScreenUI;
     public GameObject playerObject;
     public GameObject healthPoint;
     public GameObject healthPointTwo;
@@ -37,7 +38,16 @@ public class obstacleCollide : MonoBehaviour
             healthPoint.SetActive(false);
             print(damageTaken);
         }
-        
+        else if (winScreenUI != null)
+        {
+            if (collision.collider.CompareTag("Victory"))
+            {
+                if (winScreenUI != null)
+                {
+                    winScreenUI.SetActive(true);
+                }
+            }
+        }
     }
     
     public void Update()
@@ -110,17 +120,23 @@ public class obstacleCollide : MonoBehaviour
         {
             playerObject.GetComponent<WheelControllerTest>().inputEnabled = false;
             damageTaken = 0;
-            gameOverUI.SetActive(true);
+            changeScreenGameOver();
+            //gameOverUI.SetActive(true);
             //SceneManager.LoadScene("GameOverScreen");
         }
     }
 
-    public void changeScreen()
+    public void changeScreenGameOver()
     {
         print("Dead");
-        SceneManager.LoadScene("GameOverScreen");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //SceneManager.LoadScene("GameOverScreen");
     }
 
-
+    public void changeScreenVictory()
+    {
+        print("Win!");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+    }
 
 }
