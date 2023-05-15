@@ -12,7 +12,7 @@ public class EngineSound : MonoBehaviour
     {
         while (Input.GetKeyDown(KeyCode.W) || (Input.GetKeyDown(KeyCode.S)))
         {
-            if (EngineSound != null)
+            if (engineSound != null)
             {
                 engineSound.pitch = playerObject.GetComponent<getSpeed>().speed;
             } 
