@@ -7,7 +7,7 @@ using UnityEngine;
 public class getSpeed : MonoBehaviour
 {
     public Rigidbody playerRB;
-    private float speed;
+    public float speed;
     public TextMeshProUGUI speedGUI;
 
     private Vector3 previousPosition;
@@ -27,6 +27,8 @@ public class getSpeed : MonoBehaviour
             speedGUI.SetText(speed.ToString() + " KPH");
         }
     }
-
+    
+    
+    
 
 }
