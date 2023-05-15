@@ -38,15 +38,9 @@ public class obstacleCollide : MonoBehaviour
             healthPoint.SetActive(false);
             print(damageTaken);
         }
-        else if (winScreenUI != null)
+        else if (collision.collider.CompareTag("Finish"))
         {
-            if (collision.collider.CompareTag("Victory"))
-            {
-                if (winScreenUI != null)
-                {
-                    winScreenUI.SetActive(true);
-                }
-            }
+            changeScreenVictory();
         }
     }
     
@@ -136,7 +130,7 @@ public class obstacleCollide : MonoBehaviour
     public void changeScreenVictory()
     {
         print("Win!");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
     }
 
 }
